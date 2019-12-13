@@ -1,12 +1,12 @@
 export const revenue = {
     name: 'REVENUE',
-    value: '200.000',
+    value: '200.000€',
     tablet: {
         percentage: '60%',
-        value: 120000
+        value: '120.000€'
     },
     smartphone: {
         percentage: '40%',
-        value: 80000
+        value: '80.000€'
     }
 };

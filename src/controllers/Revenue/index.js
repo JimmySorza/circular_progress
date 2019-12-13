@@ -8,7 +8,7 @@ import {Grid} from "@material-ui/core";
 export function Revenue() {
     const svgWidth = 150;
     const arcWidth = 12;
-    const [progressPercentage, setProgressPercentage] = useState(35);
+    const [progressPercentage, setProgressPercentage] = useState(200000);
     const colorIndicator = ColorIndicator(progressPercentage, 'green');
     function valueText(value) {
         return `${value}°C`;
@@ -25,17 +25,18 @@ export function Revenue() {
                     svgWidth={svgWidth}
                     arcWidth={arcWidth}
                     progressPercentage={progressPercentage}
-                    colorIndicator={'green'}
+                    colorIndicator={'#2e5e20'}
                     principalText={model.name}
-                    textX={'-40'}
+                    textX={'-35'}
                     textY={'-20'}
                     principalValue={model.value}
-                    valueX={'-35'}
-                    valueY={'0'}
-                    infillColor={'blue'}
+                    valueX={'-45'}
+                    valueY={'5'}
+                    infillColor={'#73cc49'}
+                    max={600000}
                 />
               </div>
-            <div>
+            <div style={{marginTop: 5}}>
                 <Box width="100%">
                <BottomData
                     tabletPercentage={model.tablet.percentage}
@@ -45,13 +46,13 @@ export function Revenue() {
                />
 
                     <Slider
-                        defaultValue={35}
+                        defaultValue={200000}
                         getAriaValueText={valueText}
                         aria-labelledby='discrete-slider-small-steps'
-                        step={10}
+                        step={150000}
                         marks
                         min={0}
-                        max={100}
+                        max={600000}
                         valueLabelDisplay='auto'
                         onChange={(event, value) => {
                             setProgressValue(event, value)

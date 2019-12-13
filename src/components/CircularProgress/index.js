@@ -14,7 +14,8 @@ export function CircularProgress(props) {
         principalValue,
         valueX,
         valueY,
-        infillColor
+        infillColor,
+        max
         } = props;
     const svgHeight = svgWidth;
     const arcOuterRadius = svgWidth / 2;
@@ -32,14 +33,22 @@ export function CircularProgress(props) {
         <div style={{marginLeft: 40}}>
             <svg height={svgHeight} width={svgWidth}>
                 <g  transform={`translate(${svgWidth / 2}, ${svgHeight / 2})`}>
-                    <path d={progress(1)} opacity='0.2' fill={infillColor} />
+                    <path d={progress(1)} fill={infillColor} />
                 </g>
                 <g transform={`translate(${svgWidth / 2}, ${svgHeight / 2})`}>
-                    <path d={progress(progressPercentage / 100)} fill={colorIndicator} />
-                    <text x={textX} y={textY} >
+                    <path d={progress(progressPercentage / max)} fill={colorIndicator} />
+                    <text
+                        x={textX}
+                        y={textY}
+                        font-family="Arial, Helvetica, sans-serif"
+                        fill='gray'
+                        fontSize="14px"
+                    >
                         {principalText}
                     </text>
-                    <text x={valueX} y={valueY} >{`${principalValue}$`}</text>
+                    <text fontSize="22px" font-family="Arial, Helvetica, sans-serif" x={valueX} y={valueY} >
+                        {`${progressPercentage}€`}
+                    </text>
                 </g>
             </svg>
         </div>
