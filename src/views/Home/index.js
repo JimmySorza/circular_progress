@@ -1,45 +1,27 @@
-import React,  {useState}   from 'react';
-import Slider from "@material-ui/core/Slider";
-import {CircularProgress, ColorIndicator} from "../../components";
-import Box from "@material-ui/core/Box";
+import React from 'react';
+import { Impressions, Revenue, Visits } from '../../controllers'
+import {Box, Grid} from "@material-ui/core";
 
 export function Home() {
-    const svgWidth = 150;
-    const arcWidth = 12;
-    const [progressPercentage, setProgressPercentage] = useState(50);
-    const colorIndicator = ColorIndicator(progressPercentage);
-    function valueText(value) {
-        return `${value}°C`;
-    }
-    function setProgressValue(event, value) {
-        setProgressPercentage(value)
-    }
-
     return (
         <div>
-            <Box padding="3rem" justifyContent="center">
-                <CircularProgress
-                    svgWidth={svgWidth}
-                    arcWidth={arcWidth}
-                    progressPercentage={progressPercentage}
-                    colorIndicator={colorIndicator}
-                />
-                <Box width="50%">
-                    <Slider
-                        defaultValue={50}
-                        getAriaValueText={valueText}
-                        aria-labelledby='discrete-slider-small-steps'
-                        step={10}
-                        marks
-                        min={0}
-                        max={100}
-                        valueLabelDisplay='auto'
-                        onChange={(event, value) => {
-                            setProgressValue(event, value)
-                        }}
-                    />
-                </Box>
-            </Box>
+            <Grid container spacing={3}>
+                <Grid item xs={4}>
+                    <Box padding="1rem" justifyContent="center" width="70%">
+                        <Revenue />
+                    </Box>
+                </Grid>
+                <Grid item xs={4}>
+                    <Box padding="1rem" justifyContent="center" width="70%">
+                        <Impressions />
+                    </Box>
+                </Grid>
+                <Grid item xs={4}>
+                    <Box padding="1rem" justifyContent="center" width="70%">
+                        <Visits />
+                    </Box>
+                </Grid>
+            </Grid>
         </div>
     );
 }

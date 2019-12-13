@@ -3,7 +3,7 @@ import Slider from "@material-ui/core/Slider";
 import {CircularProgress, ColorIndicator} from "../../components";
 import Box from "@material-ui/core/Box";
 
-function ImpresionsController() {
+export function Impressions() {
     const svgWidth = 150;
     const arcWidth = 12;
     const [progressPercentage, setProgressPercentage] = useState(50);
@@ -17,7 +17,6 @@ function ImpresionsController() {
 
     return (
         <div>
-            <Box padding="3rem" justifyContent="center">
                 <CircularProgress
                     svgWidth={svgWidth}
                     arcWidth={arcWidth}
@@ -39,9 +38,6 @@ function ImpresionsController() {
                         }}
                     />
                 </Box>
-            </Box>
         </div>
     );
 }
-
-export default ImpresionsController;
