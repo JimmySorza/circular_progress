@@ -1,7 +1,7 @@
 import React from "react";
 import * as d3 from "d3";
 
-function CircularProgress(props) {
+export function CircularProgress(props) {
     const { svgWidth, arcWidth, progressPercentage, colorIndicator } = props;
     const svgHeight = svgWidth;
     const arcOuterRadius = svgWidth / 2;
@@ -23,14 +23,10 @@ function CircularProgress(props) {
                 </g>
                 <g transform={`translate(${svgWidth / 2}, ${svgHeight / 2})`}>
                     <path d={progress(progressPercentage / 100)} fill={colorIndicator} />
-                    <text x='0' y='0' >
-                        {`${progressPercentage}%`}
-                    </text>
+                    <text x='0' y='0' >REVENUE{`${progressPercentage}%`}</text>
                 </g>
             </svg>
         </div>
     )
 
 }
-
-export default CircularProgress;
