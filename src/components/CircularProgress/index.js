@@ -1,6 +1,5 @@
 import React from "react";
 import * as d3 from "d3";
-import graphic from '../../img/revenue.png'
 
 export function CircularProgress(props) {
     const {
@@ -11,7 +10,6 @@ export function CircularProgress(props) {
         principalText,
         textX,
         textY,
-        principalValue,
         valueX,
         valueY,
         infillColor,

@@ -1,6 +1,6 @@
 import React,  {useState}   from 'react';
 import Slider from "@material-ui/core/Slider";
-import {BottomData, CircularProgress, ColorIndicator} from "../../components";
+import {BottomData, CircularProgress} from "../../components";
 import Box from "@material-ui/core/Box";
 import {revenue as model } from "../../models/revenue";
 
@@ -8,7 +8,6 @@ export function Revenue() {
     const svgWidth = 150;
     const arcWidth = 12;
     const [progressPercentage, setProgressPercentage] = useState(200000);
-    const colorIndicator = ColorIndicator(progressPercentage, 'green');
     function valueText(value) {
         return `${value}`;
     }
