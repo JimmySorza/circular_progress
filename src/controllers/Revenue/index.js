@@ -3,7 +3,6 @@ import Slider from "@material-ui/core/Slider";
 import {BottomData, CircularProgress, ColorIndicator} from "../../components";
 import Box from "@material-ui/core/Box";
 import {revenue as model } from "../../models/revenue";
-import {Grid} from "@material-ui/core";
 
 export function Revenue() {
     const svgWidth = 150;
@@ -11,7 +10,7 @@ export function Revenue() {
     const [progressPercentage, setProgressPercentage] = useState(200000);
     const colorIndicator = ColorIndicator(progressPercentage, 'green');
     function valueText(value) {
-        return `${value}°C`;
+        return `${value}`;
     }
     function setProgressValue(event, value) {
         setProgressPercentage(value)
@@ -28,10 +27,10 @@ export function Revenue() {
                     colorIndicator={'#2e5e20'}
                     principalText={model.name}
                     textX={'-35'}
-                    textY={'-20'}
+                    textY={'-15'}
                     principalValue={model.value}
                     valueX={'-45'}
-                    valueY={'5'}
+                    valueY={'10'}
                     infillColor={'#73cc49'}
                     max={600000}
                 />
@@ -43,6 +42,8 @@ export function Revenue() {
                     tabletValue={model.tablet.value}
                     smartphonePercentage={model.smartphone.percentage}
                     smartphoneValue={model.smartphone.value}
+                    colorTablet={'#73cc49'}
+                    colorSmartphone={'#2e5e20'}
                />
 
                     <Slider

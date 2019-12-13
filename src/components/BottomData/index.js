@@ -13,33 +13,33 @@ export function BottomData(props) {
     } = props;
 
     return(
-        <Grid container spacing={1}>
+        <Grid container spacing={2}>
             <Grid item xs={6}>
-                <Typography style={{color: '#73cc49'}}>
+                <Typography style={{color: colorTablet}}>
                  Tablet
                 </Typography>
             </Grid>
             <Grid item xs={6}>
-                <Typography style={{color: '#2e5e20', fontStyle: 'bold'}}>
+                <Typography style={{color: colorSmartphone, fontStyle: 'bold'}}>
                     Smartphone
                 </Typography>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={2} variant="caption" >
                 <Typography style={{color: '#01060d'}}>
                     {tabletPercentage}
                 </Typography>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} variant="caption" >
                 <Typography style={{color: '#bbbfb7'}}>
                     {tabletValue}
                 </Typography>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={2} variant="caption" >
                 <Typography style={{color: '#01060d'}}>
                     {smartphonePercentage}
                 </Typography>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={4} variant="caption" >
                 <Typography style={{color: '#bbbfb7'}}>
                     {smartphoneValue}
                 </Typography>

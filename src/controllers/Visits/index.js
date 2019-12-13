@@ -1,43 +1,66 @@
 import React,  {useState}   from 'react';
 import Slider from "@material-ui/core/Slider";
-import {CircularProgress, ColorIndicator} from "../../components";
+import {BottomData, CircularProgress} from "../../components";
 import Box from "@material-ui/core/Box";
+import {visits as model } from "../../models";
 
 export function Visits() {
     const svgWidth = 150;
     const arcWidth = 12;
-    const [progressPercentage, setProgressPercentage] = useState(50);
-    const colorIndicator = ColorIndicator(progressPercentage);
+    const [progressPercentage, setProgressPercentage] = useState(model.value);
     function valueText(value) {
-        return `${value}°C`;
+        return `${value}`;
     }
     function setProgressValue(event, value) {
         setProgressPercentage(value)
     }
 
     return (
-        <div>
+        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+            <div>
                 <CircularProgress
+                    style={{marginLeft: '30'}}
                     svgWidth={svgWidth}
                     arcWidth={arcWidth}
                     progressPercentage={progressPercentage}
-                    colorIndicator={colorIndicator}
+                    colorIndicator={'#ba4d27'}
+                    principalText={model.name}
+                    textX={'-25'}
+                    textY={'-15'}
+                    principalValue={model.value}
+                    valueX={'-55'}
+                    valueY={'10'}
+                    infillColor={'#edbd43'}
+                    max={4800000000}
+                    visit
                 />
-                <Box width="50%">
+            </div>
+            <div style={{marginTop: 5}}>
+                <Box width="100%">
+                    <BottomData
+                        tabletPercentage={model.tablet.percentage}
+                        tabletValue={model.tablet.value}
+                        smartphonePercentage={model.smartphone.percentage}
+                        smartphoneValue={model.smartphone.value}
+                        colorTablet={'#edbd43'}
+                        colorSmartphone={'#ba4d27'}
+                    />
+
                     <Slider
-                        defaultValue={50}
+                        defaultValue={model.value}
                         getAriaValueText={valueText}
-                        aria-labelledby='discrete-slider-small-steps'
-                        step={10}
+                        aria-labelledby='discrete-slider-medium-steps'
+                        step={600000000}
                         marks
                         min={0}
-                        max={100}
+                        max={4800000000}
                         valueLabelDisplay='auto'
                         onChange={(event, value) => {
                             setProgressValue(event, value)
                         }}
                     />
                 </Box>
+            </div>
         </div>
     );
 }

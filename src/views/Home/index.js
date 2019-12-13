@@ -7,17 +7,17 @@ export function Home() {
         <div>
             <Grid container spacing={3}>
                 <Grid item xs={4}>
-                    <Box padding="1rem" justifyContent="center" width="70%">
+                    <Box padding="1rem" justifyContent="center" width="77%">
                         <Revenue />
                     </Box>
                 </Grid>
                 <Grid item xs={4}>
-                    <Box padding="1rem" justifyContent="center" width="70%">
+                    <Box padding="1rem" justifyContent="center" width="77%">
                         <Impressions />
                     </Box>
                 </Grid>
                 <Grid item xs={4}>
-                    <Box padding="1rem" justifyContent="center" width="70%">
+                    <Box padding="1rem" justifyContent="center" width="77%">
                         <Visits />
                     </Box>
                 </Grid>

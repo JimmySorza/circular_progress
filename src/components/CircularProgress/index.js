@@ -15,7 +15,8 @@ export function CircularProgress(props) {
         valueX,
         valueY,
         infillColor,
-        max
+        max,
+        visit
         } = props;
     const svgHeight = svgWidth;
     const arcOuterRadius = svgWidth / 2;
@@ -47,7 +48,7 @@ export function CircularProgress(props) {
                         {principalText}
                     </text>
                     <text fontSize="22px" font-family="Arial, Helvetica, sans-serif" x={valueX} y={valueY} >
-                        {`${progressPercentage}€`}
+                        {visit ? `${progressPercentage}` : `${progressPercentage}€`}
                     </text>
                 </g>
             </svg>
